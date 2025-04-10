@@ -12,3 +12,10 @@ jobs:
       run: echo "Hello, world!"
     - name: Hello World 2
       run: echo "Hello, world! 2"
+
+  bye-world:
+  runs-on: ubunto-latest
+  needs: hello-world
+  steps:
+  - name: bye World
+    run: echo "Hello, world!"
