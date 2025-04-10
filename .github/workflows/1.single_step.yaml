@@ -2,20 +2,30 @@ name: Firs Action - Simple
 
 on:
   workflow_dispatch:
-
 jobs:
   hello-world:
-  runs-on: ubuntu-latest
-
-  steps:
-    - name: Hello World
-      run: echo "Hello, world!"
-    - name: Hello World 2
-      run: echo "Hello, world! 2"
-
+    runs-on: ubuntu-latest
+    steps:
+    - name: Fist Step
+      run: echo "Hello World"
+  
   bye-world:
-  runs-on: ubunto-latest
-  needs: hello-world
-  steps:
-  - name: bye World
-    run: echo "Hello, world!"
+    runs-on: ubunto-latest
+    needs: hello-world
+    steps:
+    - name: bye World
+      run: echo "Hello, world!"
+
+on:
+  workflow_dispatch:
+    inputs:
+      debug_mode:
+        type: boolean
+        description: Debug
+        default: false
+        required: false
+      sample_value:
+        type: string
+        description: Cualquier valor
+        default: ""
+        required: false   
