@@ -29,3 +29,12 @@ on:
         description: Cualquier valor
         default: ""
         required: false   
+
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    workflow_dispatch:
+      push:
+        branches:
+          - main
